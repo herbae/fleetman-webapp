@@ -181,7 +181,7 @@
 
 				<configuration>
 					<!--  If using Docker Toolbox (Windows), you must find the IP of your VM. docker-machine ip -->
-                    <dockerHost>http://192.168.99.100:2375</dockerHost> 
+                    <!-- <dockerHost>http://192.168.99.100:2375</dockerHost> -->
 
 					<!--  linux -->
                     <!--<dockerHost>http://127.0.0.1:2375</dockerHost>-->
@@ -191,7 +191,7 @@
                     <verbose>true</verbose>
 					<images>
 						<image>
-							<name>virtualpairprogrammers/fleetman-webapp</name>
+							<name>lazoski/fleetman8</name>
 							<build>
 								<!--  TODO better to have this in a subdirectory -->
 								<dockerFileDir>${project.basedir}/src/main/docker/</dockerFileDir>
@@ -208,6 +208,15 @@
 						</image>
 					</images>
 				</configuration>
+
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			
 			
