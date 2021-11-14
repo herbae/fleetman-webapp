@@ -5,8 +5,6 @@ services:
     image: mysql:5
     networks:
       - fleetman-network
-    volumes:
-      - //d/docker/mydata:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: padaria123
       MYSQL_DATABASE: fleetman
@@ -18,7 +16,7 @@ services:
     ports:
       - 80:8080
     depends_on:
-      - database
+      - mysqldb
 
 networks:
   fleetman-network:
